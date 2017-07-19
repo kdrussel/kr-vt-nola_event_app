@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<title>FLEURISH - NOLA Events</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	<!-- custom css -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- NAV -->
+
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><i>fleurish</i></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+				<li><a href="browse.html">Browse Events</a></li>
+				<li><a href="newevent.html">Create Event</a></li>
+				<li><a id="modal1" href="#" data-toggle="modal" data-target="#bannerformmodal">Log In</a></li>			
+				<li><a id="modal2" href="#" data-toggle="modal" data-target="#bannerformmodal2">Sign Up</a></li>
+				<li><a href="about.html">About/Contact</a></li>
+				<li><a href="getApp.html">Get the App</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+
+<!-- / NAV -->
+
+<!-- start Login Popup -->
+		<div class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">Log Into Your Account</h4>
+					</div>
+					<div class="modal-body">
+						<form id="form1" method="POST" name="form1">
+
+						<div class="form-group">
+							<div class="input-group">                               
+							<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+							<input id="loginEmail" type="text" class="form-control" placeholder="Email"/>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="input-group">                               
+							<span class="input-group-addon"><i class="fa fa-sign-in"></i></span>
+							<input id="loginPassword" type="text" class="form-control" placeholder="Password"/>
+							</div>
+						</div>
+						
+						</form>
+					
+					</div>
+					
+					<div class="modal-footer">
+						<button id="loginButton" type="button" class="btn btn-blue">Submit</button>
+						<div class="popup1">
+							<span id="close">&times;</span>
+								<p>You have logged in!</p>
+							</div>
+					</div>
+					
+					<div>
+						<button id="lostPasswordBtn" type="button" class="btn btn-link">Are you logged in?</button>
+					</div>
+					
+					</div>
+				</div>
+				</div>
+			 </div>
+<!-- start Sign Up Popup -->
+					<div class="modal fade bannerformmodal" tabindex="-2" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal2">
+						<div class="modal-dialog modal-sm">
+							<div class="modal-content">
+							<div class="modal-content">
+
+								<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel2">Create Your Account</h4>
+								</div>
+
+								<div class="modal-body">
+								<form id="form2" method="POST" name="form2">
+						
+									<div class="form-group">
+									<div class="input-group">                               
+										<span class="input-group-addon"><i class="fa fa-paw"></i></span>
+										<input id="firstName" type="text" class="form-control" placeholder="First Name"/>
+									</div>
+									</div>
+
+									<div class="form-group">
+									<div class="input-group">                               
+										<span class="input-group-addon"><i class="fa fa-paw"></i></span>
+										<input id="lastName" type="text" class="form-control" placeholder="Last Name"/>
+									</div>
+									</div>
+									
+									<div class="form-group">
+									<div class="input-group">                               
+										<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+										<input id="signInEmail" type="text" class="form-control" placeholder="Email"/>
+									</div>
+									</div>
+									
+									<div class="form-group">
+									<div class="input-group">                               
+										<span class="input-group-addon"><i class="fa fa-sign-in"></i></span>
+										<input id="createPassword" type="text" class="form-control" placeholder="Create Password"/>
+									</div>
+									</div>
+									
+									<div class="form-group">
+									<div class="input-group">                               
+										<span class="input-group-addon"><i class="fa fa-sign-in"></i></span>
+										<input id="retypePassword" type="text" class="form-control" placeholder="Retype Password" />
+									</div>
+									</div>
+								</form>
+								</div>
+
+								<div class="modal-footer">
+								<button id="createAccount" type="button" class="btn btn-blue">Create Your Profile</button>
+								<button id="verifyCreation" type="button" class="btn btn-link">Has your profile been created?</button>
+									<div class="popup2">
+										<span id="close">&times;</span>
+										<p>Your profile has been created!</p>
+									</div>
+								</div>        
+							</div>
+							</div>
+						</div>
+					</div>
+
+<!-- / form popup -->
+
+<!-- start new event form -->
+<div class="container">
+	<h1 class="col-sm-offset-2">Create A New Event</h1>
+</div>
+
+<!-- event form -->
+<div class="container">
+
+		<div class="row" id="alert">
+		<div class="alert alert-success alert-dismissible col-sm-offset-2 col-sm-7" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			Event has been created!</div>
+		<div class="col-sm-offset-3"></div>
+		</div>
+
+		<form class="form-horizontal newCreate">
+		<!-- event title -->
+			<div class="form-group">
+				<label class="col-sm-offset-1 col-sm-2 control-label">Event Title</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control createForm" id="newEventTitle" placeholder="Give your event a title">
+				</div>
+			</div>
+		<!-- event description -->  
+			<div class="form-group">
+				<label class="col-sm-offset-1 col-sm-2 control-label">Description</label>
+				<div class="col-sm-6">
+					<textarea type="text" class="form-control createForm" rows="3" id="newEventDes" placeholder="Lengthy and overexaggerated description to bring people to the event!"></textarea>
+				</div>
+			</div>
+		<!-- event type --> 
+			<div class="form-group">
+				<label class="col-sm-offset-1 col-sm-2 control-label">Website</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control createForm" id="newEventWebsite" placeholder="Website">
+				</div>
+			</div>
+		<!-- event type --> 
+			<div class="form-group">
+				<label class="col-sm-offset-1 col-sm-2 control-label">Type</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control createForm" id="newEventType" placeholder="Type of Event">
+				</div>
+			</div>
+
+		<!-- event Location -->  
+			<div class="form-group">
+				<label class="col-sm-offset-1 col-sm-2 control-label">Location</label>
+				<div class="col-sm-2">
+					<input type="text" class="form-control createForm" id="newEventStreet" placeholder="Street">
+				</div>
+				<div class="col-sm-2">
+					<input type="text" class="form-control createForm" id="newEventCity" placeholder="City">
+				</div>
+				<div class="col-sm-1">
+					<input type="text" class="form-control createForm" id="newEventState" placeholder="State">
+				</div>
+				<div class="col-sm-1">
+					<input type="text" class="form-control createForm" id="newEventZip" placeholder="Zip">
+				</div>
+			</div>
+		<!-- event Date -->  
+			<div class="form-group">
+				<label class="col-sm-offset-1 col-sm-2 control-label">Date</label>
+				<div class="col-sm-2">
+					<input type="text" class="form-control createForm" id="newEventStartDate" placeholder="Start Date">
+				</div>
+				<div class="col-sm-2">
+					<input type="text" class="form-control createForm" id="newEventEndDate" placeholder="End Date">
+				</div>
+			</div>
+		<!-- event Time -->
+			<div class="form-group">
+				<label class="col-sm-offset-1 col-sm-2 control-label">Time</label>
+				<div class="col-sm-2">
+					<input type="text" class="form-control createForm" id="newEventStartTime" placeholder="Start Time">
+				</div>
+				<div class="col-sm-2">
+					<input type="text" class="form-control createForm" id="newEventEndTime" placeholder="End Time">
+				</div>
+			</div>
+		<!-- age restriction -->
+			<div class="form-group form-inline">
+				<label class="col-sm-offset-1 col-sm-2 control-label">Age Restriction</label>
+					<div class="col-sm-2">
+					<input type="text" class="form-control createForm" id="newEventAgeRes" placeholder="Yes or No">
+				</div>
+			</div>
+		<!-- admission price -->
+			<div class="form-group">
+				<label class="col-sm-offset-1 col-sm-2 control-label">Admission Price</label>
+				<div class="col-sm-4 input-group adminAdd">
+					<div class="input-group-addon createForm">$</div>
+						<input type="text" class="form-control createForm" id="newEventAdmission" placeholder="Amount">
+					<div class="input-group-addon createForm">.00</div>
+				</div>
+			</div>
+		<!-- photo upload -->
+<!-- 			<div class="form-group">
+				<label class="col-sm-offset-1 col-sm-2 control-label">Photos</label>
+				<div class="col-sm-2">
+					<input type="file" id="uploadImg">
+				</div>
+			</div> -->
+		<!-- fleur -->
+			<div class="form-group form-inline">
+				<label class="col-sm-offset-1 col-sm-2 control-label">Fleur</label>
+					<div class="col-sm-4">
+					<input type="text" class="form-control createForm" id="newEventFleur" placeholder="Estimated # of eventgoers">
+				</div>
+			</div>
+
+		<!-- create event button -->  
+			<div class="form-group">
+				<div class="col-sm-offset-3 col-sm-9">
+					<button type="button" class="btn btn-default" id="createEvent">Create Event</button>
+				</div>
+			</div>
+
+		</form>
+
+</div>
+<!-- / new event form -->
+
+
+
+
+<!-- START OF SCRIPT -->
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- Jquery script -->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	<!-- Bootstrap script -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+
+	<!-- custom script -->
+	<script type="text/javascript" src="script.js"></script>
+
+	<!-- PAGE SCRIPT -->
+	<script type="text/javascript">
+		
+	</script>
+
+
+</body>
+</html>
